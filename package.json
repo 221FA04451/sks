@@ -6,8 +6,6 @@
     "@react-three/drei": "^9.88.17",
     "@react-three/fiber": "^8.15.12",
     "@react-three/postprocessing": "^3.0.4",
-    "ajv": "^8.18.0",
-    "ajv-keywords": "^5.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",

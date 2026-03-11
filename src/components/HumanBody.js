@@ -93,7 +93,7 @@ function HumanBody() {
   });
   
   return (
-    <group ref={groupRef} position={[0, -3.0, 0]} scale={3.0}> // Lowered initial position
+    <group ref={groupRef} position={[0, -3.0, 0]} scale={3.0}>
       <primitive object={holographicGroup} />
     </group>
   );

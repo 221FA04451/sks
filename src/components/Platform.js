@@ -1,10 +1,8 @@
-import React, { useRef, useMemo } from 'react';
-import { useFrame } from '@react-three/fiber';
+import React from 'react';
 import * as THREE from 'three';
 
 function Platform() {
   const neonBlue = 0x00aaff;
-  const darkCore = 0x020815;
 
   return (
     <group position={[0, -0.4, 0]}>

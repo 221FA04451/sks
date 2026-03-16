@@ -5,7 +5,17 @@ module.exports = {
     "./public/index.html"
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        scan: {
+          '0%': { transform: 'translateY(-100%)' },
+          '100%': { transform: 'translateY(100%)' }
+        }
+      },
+      animation: {
+        'scan-fast': 'scan 2s linear infinite',
+      }
+    },
   },
   plugins: [],
 }

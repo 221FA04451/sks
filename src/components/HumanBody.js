@@ -35,7 +35,6 @@ const HologramShader = {
 function HumanBody() {
   const groupRef = useRef();
   
-  // Load the humanoid GLTF model
   const { scene } = useGLTF('/models/Xbot.glb');
   
   const holographicGroup = useMemo(() => {
@@ -52,7 +51,6 @@ function HumanBody() {
       side: THREE.FrontSide
     });
     
-    // Fine solid lines on the body
     const thinLineMaterial = new THREE.LineBasicMaterial({
       color: 0x44ccff,
       transparent: true,
@@ -65,14 +63,12 @@ function HumanBody() {
       if (child.isMesh && child.geometry) {
         const geom = child.geometry;
         
-        // Solid rim-lit body shell
         const shell = new THREE.Mesh(geom, shaderMaterial);
         shell.position.copy(child.position);
         shell.rotation.copy(child.rotation);
         shell.scale.copy(child.scale);
         group.add(shell);
         
-        // Fine edges (like veins/muscles in image 2)
         const edgesGeom = new THREE.EdgesGeometry(geom, 15);
         const lines = new THREE.LineSegments(edgesGeom, thinLineMaterial);
         lines.position.copy(child.position);
@@ -85,10 +81,9 @@ function HumanBody() {
     return group;
   }, [scene]);
   
-  // Floating animation
   useFrame((state) => {
     if (groupRef.current) {
-      groupRef.current.position.y = (Math.sin(state.clock.elapsedTime * 0.5) * 0.05) - 3.0; // Lowered baseline
+      groupRef.current.position.y = (Math.sin(state.clock.elapsedTime * 0.5) * 0.05) - 3.0;
     }
   });
   
